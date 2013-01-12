@@ -1,0 +1,8 @@
+
+/build
+/obj
+/packages
+/TestResults
+/scalejs.ajax-jquery.v11.suo
+/scalejs.ajax-jquery.csproj.user
+/.nuget/nuget.exe

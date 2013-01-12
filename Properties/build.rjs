@@ -1,0 +1,7 @@
+﻿({
+	mainConfigFile: '../tests/all.tests.js',
+    include: 'scalejs.ajax-jquery',
+    exclude: [
+        'scalejs!core'
+    ]
+})
