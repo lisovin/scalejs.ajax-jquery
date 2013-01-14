@@ -41,7 +41,7 @@ define([
                 result;
 
             runs(function () {
-                ajax.post('http://jsfiddle.net/echo/json/', {json: date}).subscribe(function (r) {
+                ajax.post('http://jsfiddle.net/echo/json/', {date: date}).subscribe(function (r) {
                     done = true;
                     result = r;
                     console.debug('ajax.get test result: ' + result);
@@ -54,7 +54,7 @@ define([
 
             runs(function () {
                 expect(result).toBeDefined();
-                expect(result.toString()).toEqual(date);
+                expect(result).toEqual({date: date});
             });
         });
     });

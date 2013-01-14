@@ -58,9 +58,11 @@ define([
     }
 
     function post(url, data) {
+        var jsonString = core.json.toJson(data);
+
         return ajax(url, {
             type: 'POST',
-            data: data
+            data: {json: jsonString}
         });
     }
 
