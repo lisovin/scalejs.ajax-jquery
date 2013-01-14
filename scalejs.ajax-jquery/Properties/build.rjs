@@ -1,0 +1,13 @@
+﻿({
+    paths: {
+        'scalejs' : 'Scripts/scalejs-0.1.5',
+        'json2' : 'Scripts/json2',
+        'jQuery'  : 'Scripts/jquery-1.8.3'
+    },
+    include: 'scalejs.ajax-jquery',
+    exclude: [
+        'scalejs!core',
+		'json2',
+		'jQuery'
+    ]
+})

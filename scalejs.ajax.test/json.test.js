@@ -1,8 +1,11 @@
 ﻿/*global define,describe,expect,it*/
 /*jslint sloppy: true*/
 /// <reference path="../Scripts/jasmine.js"/>
-define(['../js/scalejs.ajax-jquery'], function (extension) {
-    var json = extension.json;
+define([
+    'scalejs!core',
+    'scalejs!application'
+], function (core) {
+    var json = core.json;
 
     describe('json', function () {
         it('is defined', function () {

@@ -6,3 +6,8 @@
 /scalejs.ajax-jquery.v11.suo
 /scalejs.ajax-jquery.csproj.user
 /.nuget/nuget.exe
+/scalejs.ajax.test/obj
+/scalejs.ajax-jquery/obj
+/scalejs.ajax.test/build
+/scalejs.ajax-jquery/build
+/scalejs.ajax.test/scalejs.ajax.test.csproj.user
