@@ -46,25 +46,6 @@
     </Task>
   </UsingTask>
 
-  <UsingTask TaskName="UpdateScalejsProjectReferences" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-    <ParameterGroup>
-      <Name ParameterType="System.String" Required="true" />
-    </ParameterGroup>
-    <Task>
-      <Reference Include="System.Core" />
-      <Using Namespace="System" />
-      <Using Namespace="System.Diagnostics" />
-      <Using Namespace="System.IO" />
-      <Using Namespace="System.Text.RegularExpressions" />
-      <Using Namespace="Microsoft.Build.Framework" />
-      <Using Namespace="Microsoft.Build.Utilities" />
-      <Code Type="Fragment" Language="cs">
-        <![CDATA[
-        ]]>
-      </Code>
-    </Task>
-  </UsingTask>
-
   <UsingTask TaskName="AddSite" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
       <Name ParameterType="System.String" Required="true" />
@@ -212,9 +193,9 @@
     <AddSite Name="$(MSBuildProjectName)"
              PhysicalPath="$(MSBuildProjectDirectory)"
              Port="$(ScalejsAppSitePort)"
-             Condition="'$(ScalejsExtension)' == ''"/>
+             Condition="'$(ScalejsProjectType)' == 'Application'"/>
     <Exec Command="$(NuGetExePath) pack $(ScalejsNuspecFile) -Version $(ScalejsNuspecVersion) -BasePath $(MSBuildProjectDirectory) -OutputDirectory $(ScalejsBuildDirectory) -NonInteractive"
-          Condition="'$(ScalejsExtension)' != ''"/>
+          Condition="'$(ScalejsProjectType)' == 'Extension'"/>
   </Target>
 
   <Target Name="Rebuild" DependsOnTargets="Clean;Build">

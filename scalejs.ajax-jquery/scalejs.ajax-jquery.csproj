@@ -28,10 +28,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
-    <ScalejsExtension>True</ScalejsExtension>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RootNamespace>scalejs.ajax_jquery</RootNamespace>
+    <ScalejsProjectType>Extension</ScalejsProjectType>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
   <Import Project="$(SolutionDir)\.scalejs\Scalejs.targets" />

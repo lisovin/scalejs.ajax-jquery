@@ -7,6 +7,9 @@ $project |
         'jQuery'  : 'Scripts/jquery-1.8.3'
 	}" |
 	Add-Shims "{
+		'jQuery'		: {
+			exports	: 'jQuery'
+		},
 		'json2'			: {
 			exports : 'JSON'
 		}
