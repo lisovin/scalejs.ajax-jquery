@@ -26,8 +26,4 @@ require({
             "exports" : "JSON"
         }
     }
-}, [
-    'scalejs!application',
-    './json.test',
-    './ajax.test'
-]);
+}, ['tests/all.tests']);
