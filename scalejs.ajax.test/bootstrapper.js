@@ -3,7 +3,7 @@
 /// <reference path="Scripts/jasmine.js"/>
 require({
     "paths":  {
-        "jQuery":  "Scripts/jquery-1.8.3",
+        "jQuery":  "Scripts/jquery-1.9.0",
         "json2":  "Scripts/json2",
         "rx":  "Scripts/rx",
         "rx.binding":  "Scripts/rx.binding",
@@ -26,4 +26,7 @@ require({
             "exports":  "JSON"
         }
     }
-}, ['tests/all.tests']);
+}, [
+    'tests/all.tests',
+    'scalejs!application'
+]);

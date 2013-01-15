@@ -4,7 +4,7 @@ $project |
 	Add-Paths "{
 		'scalejs.ajax-jquery' : 'Scripts/scalejs.ajax-jquery-$($package.Version)',
         'json2' : 'Scripts/json2',
-        'jQuery'  : 'Scripts/jquery-1.8.3'
+        'jQuery'  : 'Scripts/jquery-1.9.0'
 	}" |
 	Add-Shims "{
 		'jQuery'		: {
