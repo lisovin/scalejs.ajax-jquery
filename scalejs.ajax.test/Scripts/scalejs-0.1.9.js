@@ -898,6 +898,10 @@ define('scalejs/application',[
     var moduleRegistrations = [],
         moduleInstances = [],
         applicationState = 'STOPPED';
+    /*
+    function buildCore() {
+        core.buildCore();
+    }*/
 
     function createModule(module, params, containerElement) {
         var moduleInstance, message;

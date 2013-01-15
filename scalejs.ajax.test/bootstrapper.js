@@ -8,7 +8,7 @@ require({
         "rx":  "Scripts/rx",
         "rx.binding":  "Scripts/rx.binding",
         "rx.time":  "Scripts/rx.time",
-        "scalejs":  "Scripts/scalejs-0.1.5",
+        "scalejs":  "Scripts/scalejs-0.1.9",
         "scalejs.ajax-jquery":  "Scripts/scalejs.ajax-jquery-0.1.0",
         "scalejs.reactive":  "Scripts/scalejs.reactive-0.1.0"
     },

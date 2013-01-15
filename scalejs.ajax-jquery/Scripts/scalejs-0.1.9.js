@@ -30,6 +30,7 @@ define('scalejs',[],function () {
                                         core.registerExtension(extension);
                                     }
                                 });
+                                core.buildCore();
                                 isExtensionsRegistered = true;
                             }
 
@@ -897,10 +898,10 @@ define('scalejs/application',[
     var moduleRegistrations = [],
         moduleInstances = [],
         applicationState = 'STOPPED';
-
+    /*
     function buildCore() {
         core.buildCore();
-    }
+    }*/
 
     function createModule(module, params, containerElement) {
         var moduleInstance, message;
@@ -991,7 +992,7 @@ define('scalejs/application',[
 
     function run() {
         // Build core 
-        buildCore();
+        //buildCore();
         // Create all modules
         createAll();
         startAll();

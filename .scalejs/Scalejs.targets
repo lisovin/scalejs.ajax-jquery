@@ -195,7 +195,7 @@
              Port="$(ScalejsAppSitePort)"
              Condition="'$(ScalejsProjectType)' == 'Application'"/>
     <Exec Command="$(NuGetExePath) pack $(ScalejsNuspecFile) -Version $(ScalejsNuspecVersion) -BasePath $(MSBuildProjectDirectory) -OutputDirectory $(ScalejsBuildDirectory) -NonInteractive"
-          Condition="'$(ScalejsProjectType)' == 'Extension'"/>
+          Condition="'$(ScalejsProjectType)' == 'Extension' Or '$(ScalejsProjectType)' == 'Core'"/>
   </Target>
 
   <Target Name="Rebuild" DependsOnTargets="Clean;Build">
