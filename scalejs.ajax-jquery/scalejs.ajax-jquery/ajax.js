@@ -51,7 +51,7 @@ define([
     }
 
     function get(url, data, options) {
-        options = core.merge(options, {
+        options = core.object.merge(options, {
             type: 'GET',
             data: data
         });
@@ -61,7 +61,7 @@ define([
 
     function post(url, data, options) {
         var jsonString = core.json.toJson(data);
-        options = core.merge(options, {
+        options = core.object.merge(options, {
             type: 'POST',
             data: {
                 json: jsonString
