@@ -73,7 +73,7 @@ define([
         options = core.object.merge(options, {
             type: 'POST',
             data: jsonString,
-            contentType: 'applicaiton/json',
+            contentType: 'application/json',
             processData: false
         });
 
