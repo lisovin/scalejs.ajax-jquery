@@ -22,7 +22,7 @@ define([
 
             /*jslint unparam: true*/
             function error(jqXhr, textStatus, errorThrown) {
-                log.error('Error: "' + errorThrown + ': ' + textStatus + ' in response to GET to ' + url + '"');
+                log.error('Error: "' + errorThrown + ': ' + textStatus + ' in response to ' + url + '"');
                 observer.onError({
                     error: errorThrown,
                     status: textStatus
@@ -59,20 +59,30 @@ define([
         return ajax(url, options);
     }
 
-    function post(url, data, options) {
+    function postMultipart(url, data, options) {
+        options = core.object.merge(options, {
+            type: 'POST',
+            data: data
+        });
+
+        return ajax(url, options);
+    }
+
+    function postJson(url, data, options) {
         var jsonString = core.json.toJson(data);
         options = core.object.merge(options, {
             type: 'POST',
-            data: {
-                json: jsonString
-            }
+            data: jsonString,
+            contentType: 'applicaiton/json',
+            processData: false
         });
 
         return ajax(url, options);
     }
 
     return {
-        post: post,
+        postJson: postJson,
+        postMultipart: postMultipart,
         get: get
     };
 });

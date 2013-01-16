@@ -93,13 +93,14 @@ define([
 
         });
 
-        it('`post` works', function () {
+        it('`postMultipart` works', function () {
             var done = false,
                 date = new Date().getTime().toString(),
                 result;
 
             runs(function () {
-                ajax.post('http://jsfiddle.net/echo/json/', { date: date }).subscribe(function (r) {
+                var json = core.json.toJson({date: date});
+                ajax.postMultipart('http://jsfiddle.net/echo/json/', {json: json}).subscribe(function (r) {
                     done = true;
                     result = r;
                     console.debug('ajax.post test result: ' + json.toJson(result));
