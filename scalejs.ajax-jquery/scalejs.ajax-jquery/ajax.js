@@ -50,20 +50,25 @@ define([
         });
     }
 
-    function get(url, data) {
-        return ajax(url, {
+    function get(url, data, options) {
+        options = core.merge(options, {
             type: 'GET',
             data: data
         });
+
+        return ajax(url, options);
     }
 
-    function post(url, data) {
+    function post(url, data, options) {
         var jsonString = core.json.toJson(data);
-
-        return ajax(url, {
+        options = core.merge(options, {
             type: 'POST',
-            data: {json: jsonString}
+            data: {
+                json: jsonString
+            }
         });
+
+        return ajax(url, options);
     }
 
     return {
