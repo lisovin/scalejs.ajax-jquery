@@ -7,7 +7,8 @@ define([
     'scalejs!core',
     'scalejs!application'
 ], function (core) {
-    var ajax = core.ajax, json = core.json;
+    var ajax = core.ajax,
+        json = core.json;
 
     describe('ajax', function () {
         it('is defined', function () {
@@ -28,7 +29,7 @@ define([
 
             waitsFor(function () {
                 return done;
-            }, 2000);
+            }, 4000);
 
             runs(function () {
                 expect(result).toBeDefined();

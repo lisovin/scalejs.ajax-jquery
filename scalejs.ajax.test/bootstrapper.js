@@ -27,6 +27,5 @@ require({
         }
     }
 }, [
-    'tests/all.tests',
-    'scalejs!application'
+    'tests/all.tests'
 ]);
