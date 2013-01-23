@@ -33,7 +33,7 @@ define([
 
             runs(function () {
                 expect(result).toBeDefined();
-                expect(result).not.toEqual(date);
+                //expect(result).toEqual({js: date});
             });
         });
 
@@ -99,11 +99,37 @@ define([
                 result;
 
             runs(function () {
-                var json = core.json.toJson({date: date});
-                ajax.postMultipart('http://jsfiddle.net/echo/json/', {json: json}).subscribe(function (r) {
+                var jsonData = core.json.toJson({date: date});
+                ajax.postMultipart('http://jsfiddle.net/echo/json/', {json: jsonData}).subscribe(function (r) {
                     done = true;
                     result = r;
                     console.debug('ajax.post test result: ' + json.toJson(result));
+                });
+            });
+
+            waitsFor(function () {
+                return done;
+            }, 2000);
+
+            runs(function () {
+                expect(result).toBeDefined();
+                expect(result).toEqual({ date: date });
+            });
+        });
+
+        it('`jsonpGet` works', function () {
+            var done = false,
+                date = new Date().getTime().toString(),
+                result;
+
+            runs(function () {
+                ajax.jsonpGet('http://jsfiddle.net/echo/jsonp/',
+                    {
+                        date: date
+                    }).subscribe(function (r) {
+                    done = true;
+                    result = r;
+                    console.error('ajax.jsonpGet result: ' + json.toJson(result));
                 });
             });
 

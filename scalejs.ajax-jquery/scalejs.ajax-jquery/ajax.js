@@ -1,4 +1,4 @@
-/*global define*/
+/*global define,console*/
 define([
     'jQuery',
     'scalejs!core'
@@ -36,9 +36,6 @@ define([
 
             var settings = merge({
                 type: 'GET',
-                /*headers: {
-                    'Accept': 'application/json'
-                },*/
                 success: success,
                 error: error,
                 completed: completed
@@ -80,9 +77,21 @@ define([
         return ajax(url, options);
     }
 
+    function jsonpGet(url, data, options) {
+        var params = jQuery.param(data);
+        options = core.object.merge(options, {
+            type: 'GET',
+            dataType: 'jsonp'
+        });
+
+        console.error('url: ' + url + '?' + params);
+        return ajax(url + '?' + params, undefined, options);
+    }
+
     return {
         postJson: postJson,
         postMultipart: postMultipart,
+        jsonpGet: jsonpGet,
         get: get
     };
 });
