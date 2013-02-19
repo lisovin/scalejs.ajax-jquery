@@ -29,7 +29,7 @@ define('scalejs.ajax-jquery/json',[
     };
 });
 
-/*global define*/
+/*global define,console*/
 define('scalejs.ajax-jquery/ajax',[
     'jQuery',
     'scalejs!core'
@@ -53,7 +53,7 @@ define('scalejs.ajax-jquery/ajax',[
 
             /*jslint unparam: true*/
             function error(jqXhr, textStatus, errorThrown) {
-                log.error('Error: "' + errorThrown + ': ' + textStatus + ' in response to GET to ' + url + '"');
+                log.error('Error: "' + errorThrown + ': ' + textStatus + ' in response to ' + url + '"');
                 observer.onError({
                     error: errorThrown,
                     status: textStatus
@@ -67,9 +67,6 @@ define('scalejs.ajax-jquery/ajax',[
 
             var settings = merge({
                 type: 'GET',
-                /*headers: {
-                    'Accept': 'application/json'
-                },*/
                 success: success,
                 error: error,
                 completed: completed
@@ -81,41 +78,70 @@ define('scalejs.ajax-jquery/ajax',[
         });
     }
 
-    function get(url, data) {
-        return ajax(url, {
+    function get(url, data, options) {
+        options = core.object.merge(options, {
             type: 'GET',
             data: data
         });
+
+        return ajax(url, options);
     }
 
-    function post(url, data) {
-        var jsonString = core.json.toJson(data);
-
-        return ajax(url, {
+    function postMultipart(url, data, options) {
+        options = core.object.merge(options, {
             type: 'POST',
-            data: {json: jsonString}
+            data: data
         });
+
+        return ajax(url, options);
+    }
+
+    function postJson(url, data, options) {
+        var jsonString = core.json.toJson(data);
+        options = core.object.merge(options, {
+            type: 'POST',
+            data: jsonString,
+            contentType: 'application/json',
+            processData: false
+        });
+
+        return ajax(url, options);
+    }
+
+    function jsonpGet(url, data, options) {
+        var params = jQuery.param(data);
+        options = core.object.merge(options, {
+            type: 'GET',
+            dataType: 'jsonp'
+        });
+
+        console.error('url: ' + url + '?' + params);
+        return ajax(url + '?' + params, undefined, options);
     }
 
     return {
-        post: post,
+        postJson: postJson,
+        postMultipart: postMultipart,
+        jsonpGet: jsonpGet,
         get: get
     };
 });
 
 /*global define*/
 define('scalejs.ajax-jquery',[
+    'scalejs!core',
     './scalejs.ajax-jquery/json',
     './scalejs.ajax-jquery/ajax'
 ], function (
+    core,
     json,
     ajax
 ) {
     
 
-    return {
+    core.registerExtension({
         json: json,
         ajax: ajax
-    };
+    });
 });
 

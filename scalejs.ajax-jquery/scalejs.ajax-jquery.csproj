@@ -9,7 +9,7 @@
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="bootstrapper.js" />
+    <Content Include="config.js" />
     <Content Include="Properties\build.rjs" />
     <Content Include="Properties\scalejs.ajax-jquery.nuspec">
       <SubType>Designer</SubType>
