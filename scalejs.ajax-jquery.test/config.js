@@ -10,7 +10,7 @@ var require = {
         "rx.binding":  "Scripts/rx.binding",
         "rx.time":  "Scripts/rx.time",
         "scalejs":  "Scripts/scalejs-0.2.6.1",
-        "scalejs.ajax-jquery":  "Scripts/scalejs.ajax-jquery-0.2.0",
+        "scalejs.ajax-jquery":  "Scripts/scalejs.ajax-jquery-0.2.1",
         "scalejs.reactive":  "Scripts/scalejs.reactive-2.0.20921"
     },
     "scalejs":  {

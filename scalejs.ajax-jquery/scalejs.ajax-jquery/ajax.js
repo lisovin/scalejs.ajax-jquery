@@ -66,7 +66,7 @@ define([
     }
 
     function postJson(url, data, options) {
-        var jsonString = core.json.toJson(data);
+        var jsonString = JSON.stringify(data);
         options = core.object.merge(options, {
             type: 'POST',
             data: jsonString,

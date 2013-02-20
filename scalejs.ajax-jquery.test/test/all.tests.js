@@ -2,8 +2,7 @@
 define([
     'jasmine-html',
     'scalejs!application',
-    './ajax.test',
-    './json.test'
+    './ajax.test'
 ], function () {
     'use strict';
 

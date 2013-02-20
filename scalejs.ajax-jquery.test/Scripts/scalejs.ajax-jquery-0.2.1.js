@@ -1,34 +1,4 @@
 
-/*global define,console,document*/
-define('scalejs.ajax-jquery/json',[
-    'scalejs!core',
-    'json2'
-], function (
-    core,
-    json2
-) {
-    
-
-    var has = core.object.has;
-
-    function toJson(obj) {
-        return json2.stringify(obj);
-    }
-
-    function fromJson(json) {
-        if (!has(json) || json === "") {
-            return {};
-        }
-
-        return json2.parse(json);
-    }
-
-    return {
-        toJson: toJson,
-        fromJson: fromJson
-    };
-});
-
 /*global define,console*/
 define('scalejs.ajax-jquery/ajax',[
     'jQuery',
@@ -97,7 +67,7 @@ define('scalejs.ajax-jquery/ajax',[
     }
 
     function postJson(url, data, options) {
-        var jsonString = core.json.toJson(data);
+        var jsonString = JSON.stringify(data);
         options = core.object.merge(options, {
             type: 'POST',
             data: jsonString,
@@ -130,17 +100,14 @@ define('scalejs.ajax-jquery/ajax',[
 /*global define*/
 define('scalejs.ajax-jquery',[
     'scalejs!core',
-    './scalejs.ajax-jquery/json',
     './scalejs.ajax-jquery/ajax'
 ], function (
     core,
-    json,
     ajax
 ) {
     
 
     core.registerExtension({
-        json: json,
         ajax: ajax
     });
 });

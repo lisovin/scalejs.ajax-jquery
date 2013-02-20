@@ -7,8 +7,7 @@ define([
     'scalejs!core',
     'scalejs!application'
 ], function (core) {
-    var ajax = core.ajax,
-        json = core.json;
+    var ajax = core.ajax;
 
     describe('ajax', function () {
         it('is defined', function () {
@@ -19,11 +18,12 @@ define([
             var done = false,
                 date = new Date().getTime().toString(),
                 result;
+
             runs(function () {
                 ajax.get('http://jsfiddle.net/echo/json/', { js: date }).subscribe(function (r) {
                     done = true;
                     result = r;
-                    console.debug('ajax.get test result: ' + json.toJson(result));
+                    console.debug('ajax.get test result: ' + JSON.stringify(result));
                 });
             });
 
@@ -49,7 +49,7 @@ define([
                     function (r) {
                         done = true;
                         result = r;
-                        console.debug('ajax.getError test result: ' + json.toJson(result));
+                        console.debug('ajax.getError test result: ' + JSON.stringify(result));
                     });
             });
 
@@ -77,7 +77,7 @@ define([
                     function (r) {
                         done = true;
                         result = r;
-                        console.debug('ajax.getHostError test result: ' + json.toJson(result));
+                        console.debug('ajax.getHostError test result: ' + JSON.stringify(result));
                     });
             });
 
@@ -99,11 +99,11 @@ define([
                 result;
 
             runs(function () {
-                var jsonData = core.json.toJson({date: date});
+                var jsonData = JSON.stringify({date: date});
                 ajax.postMultipart('http://jsfiddle.net/echo/json/', {json: jsonData}).subscribe(function (r) {
                     done = true;
                     result = r;
-                    console.debug('ajax.post test result: ' + json.toJson(result));
+                    console.debug('ajax.post test result: ' + JSON.stringify(result));
                 });
             });
 
@@ -129,7 +129,7 @@ define([
                     }).subscribe(function (r) {
                     done = true;
                     result = r;
-                    console.error('ajax.jsonpGet result: ' + json.toJson(result));
+                    console.error('ajax.jsonpGet result: ' + JSON.stringify(result));
                 });
             });
 

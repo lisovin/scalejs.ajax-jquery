@@ -16,12 +16,9 @@
     </Content>
     <Content Include="scalejs.ajax-jquery.js" />
     <Content Include="scalejs.ajax-jquery\ajax.js" />
-    <Content Include="scalejs.ajax-jquery\json.js" />
     <Content Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
-    <Content Include="Scripts\json2.js" />
-    <Content Include="Scripts\json2.min.js" />
     <Content Include="Scripts\scalejs-0.1.9.js" />
     <Content Include="Scripts\scalejs-0.1.9.min.js" />
     <Content Include="tools\install.ps1" />

@@ -3,7 +3,6 @@
     include: 'scalejs.ajax-jquery',
     exclude: [
         'scalejs!core',
-		'json2',
 		'jQuery'
     ]
 })
