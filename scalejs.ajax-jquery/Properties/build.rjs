@@ -2,7 +2,6 @@
 	mainConfigFile: '../config.js',
     include: 'scalejs.ajax-jquery',
     exclude: [
-        'scalejs!core',
-		'jQuery'
+        'scalejs!core'
     ]
 })

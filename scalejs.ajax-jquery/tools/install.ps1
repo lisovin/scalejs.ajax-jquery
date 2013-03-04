@@ -2,17 +2,7 @@
 
 $project |
 	Add-Paths "{
-		'scalejs.ajax-jquery' : 'Scripts/scalejs.ajax-jquery-$($package.Version)',
-        'json2' : 'Scripts/json2',
-        'jQuery'  : 'Scripts/jquery-1.9.0'
-	}" |
-	Add-Shims "{
-		'jQuery'		: {
-			exports	: 'jQuery'
-		},
-		'json2'			: {
-			exports : 'JSON'
-		}
+		'scalejs.ajax-jquery' : 'Scripts/scalejs.ajax-jquery-$($package.Version)'
 	}" |
 	Add-ScalejsExtension 'scalejs.ajax-jquery' |
 	Out-Null
