@@ -29,7 +29,7 @@ define([
                 });
             }
 
-            function completed() {
+            function complete() {
                 observer.onCompleted();
             }
             /*jslint unparam: false*/
@@ -38,7 +38,7 @@ define([
                 type: 'GET',
                 success: success,
                 error: error,
-                completed: completed
+                complete: complete
             }, opts);
 
             jQuery.ajax(url, settings);
