@@ -1,6 +1,7 @@
 var require = {
-    "paths":  {
-        "jQuery":  "empty:",
-        "scalejs":  "Scripts/scalejs-0.1.9"
+    "paths": {
+        "jQuery": "empty:",
+        "formdata": "empty:",
+        "scalejs": "Scripts/scalejs-0.1.9"
     }
 };

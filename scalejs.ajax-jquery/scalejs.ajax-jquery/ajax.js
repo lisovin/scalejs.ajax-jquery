@@ -1,10 +1,12 @@
 /*global define,console*/
 define([
     'jQuery',
-    'scalejs!core'
+    'scalejs!core',
+    'formdata'
 ], function (
     jQuery,
-    core
+    core,
+    formdata
 ) {
     'use strict';
 
@@ -43,7 +45,7 @@ define([
 
             jQuery.ajax(url, settings);
 
-            return function () {};
+            return function () { };
         });
     }
 
@@ -57,10 +59,28 @@ define([
     }
 
     function postMultipart(url, data, options) {
-        options = core.object.merge(options, {
-            type: 'POST',
-            data: data
+        var fdata = new FormData(),
+            fields = Object.keys(data);
+
+        fields.forEach(function (field) {
+            fdata.append(field, data[field]);
         });
+
+        if (fdata.fake) {
+            options = core.object.merge(options, {
+                type: 'POST',
+                data: fdata,
+                contentType: "multipart/form-data; boundary=" + fdata.boundary,
+                processData: false
+            });
+        } else {
+            options = core.object.merge(options, {
+                type: 'POST',
+                data: fdata,
+                contentType: false,
+                processData: false
+            });
+        }
 
         return ajax(url, options);
     }

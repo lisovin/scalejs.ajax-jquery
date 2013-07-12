@@ -2,7 +2,8 @@
 
 $project |
 	Add-Paths "{
-		'scalejs.ajax-jquery' : 'Scripts/scalejs.ajax-jquery-$($package.Version)'
+		'scalejs.ajax-jquery' : 'Scripts/scalejs.ajax-jquery-$($package.Version)',
+		'formdata' : 'Scripts/formdata'
 	}" |
 	Add-ScalejsExtension 'scalejs.ajax-jquery' |
 	Out-Null
