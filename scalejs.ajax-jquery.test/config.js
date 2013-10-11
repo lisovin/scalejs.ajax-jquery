@@ -5,7 +5,6 @@ var require = {
         "jasmine":  "Scripts/jasmine",
         "jasmine-html":  "Scripts/jasmine-html",
         "jQuery":  "Scripts/jquery-1.9.0",
-        "json2":  "Scripts/json2",
         "rx":  "Scripts/rx",
         "rx.binding":  "Scripts/rx.binding",
         "rx.time":  "Scripts/rx.time",
@@ -30,9 +29,6 @@ var require = {
         },
         "jQuery":  {
             "exports":  "jQuery"
-        },
-        "json2":  {
-            "exports":  "JSON"
         }
     }
 };

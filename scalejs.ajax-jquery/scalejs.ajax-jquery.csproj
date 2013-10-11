@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>{CBB3D24D-A50D-45B2-9F11-0907BF96DF42}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <OutputPath>build</OutputPath>
+    <OutputPath>js</OutputPath>
     <JSLintSkip>\Scripts\</JSLintSkip>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -16,12 +16,18 @@
     </Content>
     <Content Include="scalejs.ajax-jquery.js" />
     <Content Include="scalejs.ajax-jquery\ajax.js" />
+    <Content Include="Scripts\almond.js" />
     <Content Include="Scripts\formdata.js" />
     <Content Include="Scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
     <Content Include="Scripts\scalejs-0.1.9.js" />
     <Content Include="Scripts\scalejs-0.1.9.min.js" />
+    <Content Include="Scripts\scalejs-0.3.0.1.js" />
+    <Content Include="Scripts\scalejs-0.3.0.1.min.js" />
+    <Content Include="Scripts\_scalejs.intellisense.js" />
     <Content Include="tools\install.ps1" />
     <Content Include="tools\uninstall.ps1" />
   </ItemGroup>
